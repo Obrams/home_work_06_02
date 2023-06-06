@@ -17,6 +17,4 @@ def test_successful_find_selene(browser_size_window):
 def test_unsuccessful_find_selene(browser_size_window):
     browser.open('https://google.com')
     browser.element('[name="q"]').should(be.blank).type('asldksal;dkas;dlka;sldka;sdk;lsadkas;ld').press_enter()
-    assert browser.element('[id="result-stats"]').should(
-        have.text('Результатов: примерно 0')) != browser.element('[id="result-stats"]').should(
-        have.text('Результатов: примерно 0')), "Found a search result that shouldn't be there"
+    assert browser.element('[id="result-stats"]').should(have.text('Результатов: примерно 0'))
